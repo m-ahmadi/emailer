@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/foundicons.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="css/jstree/style.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/buttons.css">
+	<link rel="stylesheet" type="text/css" href="css/alertify.core.css">
+	<link rel="stylesheet" type="text/css" href="css/alertify.default.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>سامانه ارسال قبض</title>
+</head>
+
+<body class="preloading" style="overflow-x: hidden;">
+	<div class="my-preloader">
+		<h2>در حال بررسی وضعییت ورود...</h2>
+		
+		<!-- <div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div> -->
+		
+		<div class="preloader-wrapper big active">
+			<div class="spinner-layer spinner-blue">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+			<div class="spinner-layer spinner-red">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+			<div class="spinner-layer spinner-yellow">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+			<div class="spinner-layer spinner-green">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<header class="header no-display">
+		<div class="header-right">
+			<h1 class="header-right-maintitle">سامانه گزارش گیری شبکه یکپارچه مخابـراتی شهـرداری تهـران</h1>
+			<h2 class="header-right-subtitle">شهـــــرداری تهـــــران</h2> <!-- 5 char -->
+		</div>
+		<div class="header-left">
+			<img class="fn-current_user-profpic" src="images/profpic.png" alt="User Picture"/>
+			<div class="header-leftdata">
+				<h1 class="header-userinfo">
+					<span class="fn-current_user-fullnamefa"></span>&nbsp;-&nbsp;
+					<a href="#">خروج از سایت</a>
+				</h1>
+				<!-- <h4 class="fn-current_user-title"></h4> -->
+				<h2 class="header-date hidden">
+					<span class="header-endate">
+						<span class="fn-endate-dayname">TUESDAY</span>,
+						<span class="fn-endate-daynumber">10</span>
+						<span class="fn-endate-monthname">FEBRUARY</span>,
+						<span class="fn-endate-year">2015</span>
+					</span>
+					
+					<span class="fn-fadate-dayname"></span>
+					<span>،</span>
+					<span class="fn-fadate-daynumber"></span>
+					<span class="fn-fadate-monthname"></span>&nbsp;ماه
+					<span class="fn-fadate-year"></span>
+				</h2>
+			</div>
+		</div>
+	</header>
+	
+	
+	<div class="content no-display">
+		
+		<!-- <ul class="tabigation">
+			<li class="fn-service_admin-tab_link"><button class="btn waves-effect waves-light fn-tablink disabled" data-tab="1" title="تخصیص مدیر محلی"><span class="fa fa-asterisk"></span> مدیر سامانه</button></li>
+			<li class="fn-local_admin-tab_link"><button class="btn waves-effect waves-light fn-tablink disabled" data-tab="2" title="تخصیص مدیر"><span class="fa fa-th-list"></span> مدیر محلی</button></li>
+			<li class="fn-manager-tab_link"><button class="btn waves-effect waves-light fn-tablink disabled" data-tab="3" title="تخصیص کاربر"><span class="glyphicon glyphicon-user"></span> مدیر</button></li>
+			<li><a href="../emailer/index.htm" class="btn waves-effect waves-light"><span class="fa fa-envelope"></span> ارسال قبض</a></li>
+		</ul> -->
+		<div style="clear:both;"></div>
+		
+		<div class="wrap">
+	
+		<div class="subpanel profile">
+			<div class="subpanel-header"><span class="glyphicon glyphicon-user"></span> مشخصات</div>
+			
+			<div class="subpanel-body">
+				
+				<div class="profile-img">
+					<img src="images/profpic.png" class="" id="fn-profile-img" alt="Profile Picture"/>
+				</div>
+				<table class="">
+					<tr>
+						<th><span class="glyphicon glyphicon-user"></span> نام</th>
+						<td id="fn-profile-firstname"></td>
+					</tr>
+					<tr>
+						<th><span class="glyphicon glyphicon-info-sign"></span> نام خانوادگی</th>
+						<td id="fn-profile-lastname"></td>
+					</tr>
+					<tr>
+						<th><span class="glyphicon glyphicon-envelope"></span> ایمیل</th>
+						<td id="fn-profile-email"></td>
+					</tr>
+					<tr>
+						<th><span class="glyphicon glyphicon-file"></span> سمت</th>
+						<td id="fn-profile-title"></td>
+					</tr>
+					<tr>
+						<th><span class="glyphicon glyphicon-earphone"></span> تلفن</th>
+						<td id="fn-profile-phone"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="subpanel main">
+			<div class="subpanel-header"><span class="glyphicon glyphicon-asterisk"></span> لیست کاربران</div>
+			
+			<div class="subpanel-body" id="fn-jstree_demo_div-parent">
+				<div class="tree-toolbar">
+					<button class="btn waves-effect waves-light disabled fn-treetoolbar" id="fn-jstree_demo_div-open_all"><span class="glyphicon glyphicon-plus"></span> بازکردن همه</button>
+					<button class="btn waves-effect waves-light disabled fn-treetoolbar" id="fn-jstree_demo_div-close_all"><span class="glyphicon glyphicon-minus"></span> بستن همه</button>
+					<button class="btn waves-effect waves-light disabled fn-treetoolbar" id="fn-jstree_demo_div-select_all"><span class="glyphicon glyphicon-ok"></span> انتخاب همه</button>
+					<button class="btn waves-effect waves-light disabled fn-treetoolbar" id="fn-jstree_demo_div-deselect_all"><span class="glyphicon glyphicon-remove"></span> عدم انتخاب همه</button>
+				</div>
+				<div class="submit-btns">
+					<button id="fn-submit-first" class="button button-3d button-caution disabled"><i class="fa fa-cloud-upload"></i> تایید</button>
+					<!-- <button id="fn-submit-first" class="button button-3d button-caution disabled">
+						<i class="fa fa-cloud-upload"></i>
+						<span> </span>
+						<span id="fn-submit-first-text">تایید</span>
+					</button> -->
+					<button id="fn-submit-second" class="button button-3d button-action disabled"><i class="fa fa-bomb"></i> بفرست</button>
+				</div>
+				<div class="progress-bar no-opacity">
+					<span class="fn-progress-main-msg">در حال فرستادن ایمیل ها...</span>
+					<i id="refresh" class="fa fa-refresh fa-spin"></i>
+					<span class="progress-remaining fn-remaining"></span>
+					<span class="fn-progress-msg"></span>
+				</div>
+				
+				<div style="clear:both"></div>
+				
+				<div class="mp-wrap">
+					<label for="fn-mp-input">انتخاب ماه</label>
+					<br />
+					<input id="fn-mp-input" class="mp-input "type="text" value="">
+					
+					<div class="monthpicker hidden opacity-none">
+						<div class="mp-header">
+							<button class="btn waves-effect waves-light mp-next fn-mp-next">&lt;</button>
+							<h4 class="mp-year"><span class="fn-mp-year">1394</span></h4>
+							<button class="btn waves-effect waves-light mp-prev fn-mp-prev">&gt;</button>
+						</div>
+						<div class="mp-body">
+							<table>
+								<tr>
+									<td class="fn-month spring" data-val="01"><a>فروردین</a></td>
+									<td class="fn-month spring" data-val="02"><a>اردیبهشت</a></td>
+									<td class="fn-month spring" data-val="03"><a>خرداد</a></td>
+								</tr>
+								<tr>
+									<td class="fn-month summer" data-val="04"><a>تیر</a></td>
+									<td class="fn-month summer" data-val="05"><a>مرداد</a></td>
+									<td class="fn-month summer" data-val="06"><a>شهریور</a></td>
+								</tr>
+								<tr>
+									<td class="fn-month fall" data-val="07"><a>مهر</a></td>
+									<td class="fn-month fall" data-val="08"><a>آبان</a></td>
+									<td class="fn-month fall" data-val="09"><a>آذر</a></td>
+								</tr>
+								<tr>
+									<td class="fn-month winter" data-val="10"><a>دی</a></td>
+									<td class="fn-month winter" data-val="11"><a>بهمن</a></td>
+									<td class="fn-month winter" data-val="12"><a>اسفند</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<div class="user-select">
+					
+					
+					<div>
+					  <input name="group1" type="radio" id="user-select-radio" class="fn-radio" checked/>
+					  <label for="user-select-radio">ارسال به کاربر</label>
+					</div>
+					
+					
+					<input id="autocomplete_1" class="fn-us-input" type="text" value="" placeholder="جست و جوی کاربران">
+					
+					<div>
+						<input name="group1" type="radio" id="self-radio" class="fn-radio"/>
+						<label for="self-radio">ارسال به صاحبان</label>
+					</div>
+					
+				</div>
+				
+				<div style="clear:both;"></div>
+				<div id="jstree_demo_div" class=""></div>
+			</div>
+		</div>
+		
+		
+		</div>  <!-- wrap -->
+		
+		<div style="clear:both;"></div>
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+			</div>
+			<div class="modal-footer">
+				<button class="btn waves-effect waves-light ">انجام بده</button>
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">برگرد</a>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<footer class="footer no-display">
+		<nav>
+			<ul>
+				<li>شهرداری تهران</li>
+				<li><a href="/cgi-bin/oauth2/privacy" target="_blank">حریم شخصی کاربران</a></li>
+				<li><a href="/cgi-bin/oauth2/privacy" target="_blank">درباره ما</a></li>
+			</ul>
+		</nav>
+	</footer>
+	
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/lib/materialize.min.js"></script>
+<script type="text/javascript" src="js/lib/jstree.min.js"></script>
+<script type="text/javascript" src="js/lib/bootbox.min.js"></script>
+<script type="text/javascript" src="js/lib/alertify.js"></script>
+<script type="text/javascript" src="js/lib/base64.min.js"></script>
+<script type="text/javascript" src="js/fn.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <button class="button button-3d button-box button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+<a href="#" class="button button-3d button-primary button-rounded">Check out the new site!</a>
+<a href="#" class="button button-3d button-action button-pill">Visit Us!</a>
+<button class="button button-3d button-action button-circle button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+<a href="#" class="button button-3d button-caution"><i class="fa fa-camera"></i> Go</a>
+<a href="#" class="button button-3d button-royal">Say Hi!</a>
+
+<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+
+
+<i class="fa fa-spinner fa-spin"></i>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<i class="fa fa-refresh fa-spin"></i>
+<i class="fa fa-cog fa-spin"></i>
+<i class="fa fa-spinner fa-pulse"></i> -->
